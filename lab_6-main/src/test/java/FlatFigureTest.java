@@ -69,4 +69,17 @@ public class FlatFigureTest {
         double result = ff.area();
         assertEquals(expResult, result,0.0001);
     }
+    //дополнительный тест для проверки площади параллелограмма с
+    // другими углами (не 30/150 градусов), чтобы убедиться,
+    // что расчеты работают корректно для разных значений углов
+    @Test
+    public void testParalWithDifferentAngles() {
+        double a = 5;
+        double b = 10;
+        double expResult = 25.0;  // 5 * 10 * sin(30°) = 50 * 0.5 = 25
+        FlatFigure ff = new FlatFigure(a, b, 30, 150);
+        double result = ff.area();
+        assertEquals(expResult, result, 0.0001);
+    }
+
 }
