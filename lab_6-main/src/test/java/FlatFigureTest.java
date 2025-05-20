@@ -81,5 +81,17 @@ public class FlatFigureTest {
         double result = ff.area();
         assertEquals(expResult, result, 0.0001);
     }
-
+    //тест для проверки площади непрямоугольного треугольника
+    // (где угол не равен 90 градусам),
+    // чтобы убедиться, что формула Герона работает корректно
+    @Test
+    public void testNonRightAngledTriangle() {
+        double a = 5;
+        double b = 6;
+        double c = 7;
+        double expResult = 14.696938;  // Рассчитано по формуле Герона
+        FlatFigure ff = new FlatFigure(a, b, c);
+        double result = ff.area();
+        assertEquals(expResult, result, 0.0001);
+    }
 }
